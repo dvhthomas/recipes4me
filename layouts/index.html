@@ -1,0 +1,44 @@
+{{ define "main" }}
+<header class="page-header">
+    <h1>Recipes</h1>
+    <p>Kitchen-tested recipes that I have made myself.</p>
+</header>
+<div class="search-box">
+    <label for="recipe-search" class="sr-only">Search recipes</label>
+    <input
+        type="search"
+        id="recipe-search"
+        placeholder="Search recipes… (press / to focus)"
+        aria-label="Search recipes"
+    />
+</div>
+<div id="search-results" style="display: none;"></div>
+<div id="recipe-grid" class="recipe-grid">
+    {{ range where .Site.RegularPages "Section" "recipes" }}
+    {{ if ne .File.BaseFileName "units" }}
+    <a href="{{ .RelPermalink }}" class="recipe-card">
+        <h2>{{ .Title }}</h2>
+        {{ with .Params.summary }}<p class="card-summary">{{ . | markdownify | plainify }}</p>{{ end }}
+        <div class="card-meta">
+            {{ with .Params.totalTime }}<span>{{ . | replaceRE "^PT" "" | replaceRE "H" "h " | replaceRE "M" "m" | strings.TrimSpace }}</span>{{ end }}
+            {{ if and .Params.yield .Params.yieldUnit }}<span>{{ .Params.yield }} {{ .Params.yieldUnit }}</span>{{ end }}
+            {{ with .Params.difficulty }}<span>{{ . }}</span>{{ end }}
+        </div>
+        <div class="card-tags">
+            {{ range .Params.cuisines }}<span class="tag tag-cuisine">{{ . }}</span>{{ end }}
+            {{ range .Params.categories }}<span class="tag tag-category">{{ . }}</span>{{ end }}
+        </div>
+    </a>
+    {{ end }}
+    {{ end }}
+</div>
+
+{{ $fuse := resources.Get "js/fuse.min.js" | minify | fingerprint }}
+<script src="{{ $fuse.RelPermalink }}" integrity="{{ $fuse.Data.Integrity }}"></script>
+
+{{ $mark := resources.Get "js/mark.min.js" | minify | fingerprint }}
+<script src="{{ $mark.RelPermalink }}" integrity="{{ $mark.Data.Integrity }}"></script>
+
+{{ $search := resources.Get "js/search.js" | minify | fingerprint }}
+<script src="{{ $search.RelPermalink }}" integrity="{{ $search.Data.Integrity }}"></script>
+{{ end }}

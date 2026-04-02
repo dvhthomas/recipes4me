@@ -1,0 +1,56 @@
+baseURL = "http://localhost:1313/"
+languageCode = "en-us"
+title = "Recipes By Me"
+
+[pagination]
+  pagerSize = 50
+
+[params]
+    description = "Kitchen-tested recipes by Dylan Thomas"
+
+[menu]
+    [[menu.main]]
+        name = "Recipes"
+        url = "/recipes/"
+        weight = 1
+    [[menu.main]]
+        name = "Cuisines"
+        url = "/cuisines/"
+        weight = 2
+    [[menu.main]]
+        name = "Categories"
+        url = "/categories/"
+        weight = 3
+    [[menu.main]]
+        name = "Diets"
+        url = "/diets/"
+        weight = 4
+    [[menu.main]]
+        name = "Units"
+        url = "/recipes/units/"
+        weight = 5
+    [[menu.main]]
+        name = "About"
+        url = "/about/"
+        weight = 6
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+  cuisine = "cuisines"
+  category = "categories"
+  diet = "diets"
+
+[permalinks]
+  recipes = "/recipes/:slug"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    lineNos = true
+    style = "github"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

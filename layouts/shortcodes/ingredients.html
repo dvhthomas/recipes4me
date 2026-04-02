@@ -1,0 +1,12 @@
+{{- $content := .Inner | strings.TrimSpace -}}
+{{- $lines := split $content "\n" -}}
+{{- $ingredients := slice -}}
+{{- range $lines -}}
+    {{- $line := strings.TrimSpace . -}}
+    {{- if hasPrefix $line "- " -}}
+        {{- $ingredient := strings.TrimPrefix "- " $line -}}
+        {{- $ingredients = $ingredients | append $ingredient -}}
+    {{- end -}}
+{{- end -}}
+{{- .Page.Scratch.Set "ingredients" $ingredients -}}
+<div class="ingredients-list">{{- .Inner | markdownify -}}</div>

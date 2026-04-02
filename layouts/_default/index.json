@@ -1,0 +1,7 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- range where .Site.RegularPages "Section" "recipes" -}}
+    {{- if ne .File.BaseFileName "units" -}}
+    {{- $.Scratch.Add "index" (dict "title" .Title "summary" (.Params.summary | markdownify | plainify) "cuisines" .Params.cuisines "categories" .Params.categories "diets" .Params.diets "contents" .Plain "permalink" .RelPermalink "totalTime" .Params.totalTime "yield" .Params.yield "yieldUnit" .Params.yieldUnit "difficulty" .Params.difficulty) -}}
+    {{- end -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}

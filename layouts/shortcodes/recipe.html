@@ -1,0 +1,4 @@
+{{- $content := .Inner | markdownify -}}
+<div class="recipe-content" id="recipe">
+    {{ $content | safeHTML }}
+</div>

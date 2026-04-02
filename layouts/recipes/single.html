@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+<header class="recipe-header">
+    <h1>{{ .Title }}</h1>
+    {{ if .Params.summary }}
+    <p class="recipe-summary">{{ .Params.summary | markdownify }}</p>
+    {{ end }}
+
+    <div class="recipe-author-date">
+        <span>By {{ with .Params.author.name }}<a href="{{ $.Params.author.url | default $.Site.BaseURL }}">{{ . }}</a>{{ else }}{{ .Site.Title }}{{ end }}</span>
+        <span> · </span>
+        <time datetime="{{ .PublishDate.Format "2006-01-02" }}">
+            {{ .PublishDate.Format "January 2, 2006" }}
+        </time>
+    </div>
+
+    {{ if ne .File.BaseFileName "units" }}
+    <aside class="recipe-actions no-print">
+        <a href="#recipe">Jump to Recipe</a>
+        <span class="action-sep">·</span>
+        <a href="/recipes/units/">Unit Conversions</a>
+        <span class="action-sep">·</span>
+        <a href="javascript:window.print()">Print</a>
+    </aside>
+    {{ end }}
+
+    {{ partial "recipe-meta.html" . }}
+</header>
+
+<article class="section-recipes">
+    {{ .Content }}
+    <p class="print-only" style="margin-top: 2rem; font-size: 0.9rem; color: #666;">
+        Recipe URL: {{ .Permalink }}
+    </p>
+</article>
+
+{{ end }}

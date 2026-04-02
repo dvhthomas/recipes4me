@@ -1,0 +1,34 @@
+{{- $content := .Inner | strings.TrimSpace -}}
+{{- $lines := split $content "\n" -}}
+{{- $instructions := slice -}}
+{{- $currentParagraph := "" -}}
+
+{{- range $lines -}}
+    {{- $line := strings.TrimSpace . -}}
+    {{- if and (ne $line "") (not (hasPrefix $line "#")) (not (hasPrefix $line "{{")) (not (hasPrefix $line "<")) (not (hasPrefix $line "alt=")) -}}
+        {{- if findRE `^\d+\.\s+` $line -}}
+            {{- if ne $currentParagraph "" -}}
+                {{- $instructions = $instructions | append $currentParagraph -}}
+                {{- $currentParagraph = "" -}}
+            {{- end -}}
+            {{- $instruction := replaceRE `^\d+\.\s+` "" $line -}}
+            {{- $instructions = $instructions | append $instruction -}}
+        {{- else if hasPrefix $line "**" -}}
+            {{- if ne $currentParagraph "" -}}
+                {{- $instructions = $instructions | append $currentParagraph -}}
+            {{- end -}}
+            {{- $currentParagraph = $line -}}
+        {{- else if ne $currentParagraph "" -}}
+            {{- $currentParagraph = printf "%s %s" $currentParagraph $line -}}
+        {{- else -}}
+            {{- $instructions = $instructions | append $line -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- if ne $currentParagraph "" -}}
+    {{- $instructions = $instructions | append $currentParagraph -}}
+{{- end -}}
+
+{{- .Page.Scratch.Set "instructions" $instructions -}}
+{{- .Inner | markdownify -}}
