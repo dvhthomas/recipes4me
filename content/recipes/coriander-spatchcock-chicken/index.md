@@ -5,7 +5,7 @@ summary: |-
   Roast chicken that has been spatchcocked (splayed) and liberally marinaded with red chilli, coriander, mint, and more.
   In the USA coriander leaves are called cilantro: this recipe calls for  coriander leaves and not the seeds.
 draft: false
-images: [chicken.png]
+images: [pre-cook.jpg]
 # Recipe author (for structured data)
 author:
   name: Angela Hartnett
@@ -23,7 +23,7 @@ yieldUnit: "servings"
 difficulty: "Easy"   # Easy, Intermediate, Advanced
 ---
 
-![Spatchcocked Chicken](chicken.png)
+![Spatchcocked Chicken](pre-cook.jpg)
 
 I saw this on [the Dish podcast](https://youtube.com/shorts/2RSMjPljWsg?si=twL2TaHfEFnh3pdL).
 The [source recipe](https://www.waitrose.com/ecom/recipe/roast-spatchcock-chicken-with-coriander-red-chilli-and-charred-limes) has bold flavor, and is great with potatoes and peas.

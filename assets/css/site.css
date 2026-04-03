@@ -72,6 +72,8 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+    border-radius: 6px;
+    margin: 1rem 0;
 }
 
 main {
@@ -153,7 +155,7 @@ nav {
     margin: 0 auto;
     padding: 1.25rem 1.5rem;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     gap: 1rem;
 }
@@ -540,12 +542,14 @@ footer p {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 0.75rem;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     padding: 0.3rem 0.75rem;
-    border: none;
-    border-radius: 4px;
+    border: 1px solid;
+    border-radius: 3px;
     display: inline-block;
     text-decoration: none;
-    color: var(--white);
+    background: var(--white);
     transition: opacity 0.2s;
 }
 
@@ -555,15 +559,18 @@ footer p {
 }
 
 .recipe-tag-cuisine {
-    background: var(--cuisine-accent);
+    border-color: var(--cuisine-accent);
+    color: var(--cuisine-accent);
 }
 
 .recipe-tag-category {
-    background: var(--category-accent);
+    border-color: var(--category-accent);
+    color: var(--category-accent);
 }
 
 .recipe-tag-diet {
-    background: var(--accent-tertiary);
+    border-color: var(--accent-tertiary);
+    color: var(--accent-tertiary);
 }
 
 /* --- Recipe Content Box --- */
@@ -814,5 +821,9 @@ footer p {
 
     .nav-links a {
         font-size: 0.75rem;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
     }
 }

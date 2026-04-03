@@ -2,7 +2,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="{{ if .Params.summary }}{{ .Params.summary }}{{ else if .Site.Params.description }}{{ .Site.Params.description }}{{ end }}" />
-    {{ $title := print .Title " Â· " .Site.Title }}
+    {{ $title := print .Title " · " .Site.Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
     <title>{{ $title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
