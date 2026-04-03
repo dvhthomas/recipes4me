@@ -1,4 +1,4 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://recipes4.me/"
 languageCode = "en-us"
 title = "Recipes By Me"
 
