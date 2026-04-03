@@ -1,0 +1,41 @@
+{{- $title := .Title }}
+{{- if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+{{- $description := .Params.summary | default .Site.Params.description | plainify }}
+{{- $url := .Permalink }}
+
+{{/* Resolve OG image: page images → recipe images → fallback to about/pan.jpg */}}
+{{- $ogImage := "" }}
+{{- with .Params.images }}
+  {{- $first := index . 0 }}
+  {{- with $.Resources.GetMatch $first }}
+    {{- $resized := .Fill "1200x630 Center" }}
+    {{- $ogImage = $resized.Permalink }}
+  {{- end }}
+{{- end }}
+{{- if not $ogImage }}
+  {{- $aboutPage := .Site.GetPage "about" }}
+  {{- with $aboutPage }}
+    {{- with .Resources.GetMatch "pan.jpg" }}
+      {{- $resized := .Fill "1200x630 Center" }}
+      {{- $ogImage = $resized.Permalink }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+<meta property="og:url" content="{{ $url }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:locale" content="{{ .Site.LanguageCode | default "en_us" }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+{{- with $ogImage }}
+<meta property="og:image" content="{{ . }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+{{- end }}
+<meta name="twitter:card" content="{{ if $ogImage }}summary_large_image{{ else }}summary{{ end }}">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+{{- with $ogImage }}
+<meta name="twitter:image" content="{{ . }}">
+{{- end }}
