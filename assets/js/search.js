@@ -10,7 +10,7 @@ const fuseOptions = {
   includeScore: true,
   threshold: 0.2,
   ignoreLocation: true,
-  minMatchCharLength: 3,
+  minMatchCharLength: 2,
   keys: [
     { name: "title", weight: 2 },
     { name: "summary", weight: 1.5 },
