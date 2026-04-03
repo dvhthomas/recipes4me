@@ -30,9 +30,14 @@ difficulty: "Easy"
 ### Ingredients
 
 {{< ingredients >}}
+#### Produce
 - 6 medium potatoes
-- 1 stick salted butter
 - 1 white onion, sliced
+
+#### Dairy & Eggs
+- 1 stick salted butter
+
+#### Pantry
 - Bay leaves
 - 1 cup chicken stock
 - Salt and pepper to taste

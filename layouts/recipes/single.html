@@ -15,16 +15,16 @@
     </div>
 
     {{ if ne .File.BaseFileName "units" }}
-    <aside class="recipe-actions no-print">
-        <a href="#recipe">Jump to Recipe</a>
-        <span class="action-sep">·</span>
-        <a href="/recipes/units/">Unit Conversions</a>
-        <span class="action-sep">·</span>
-        <a href="javascript:window.print()">Print</a>
-    </aside>
+    <details class="recipe-details" open>
+        <summary class="recipe-details-toggle">Recipe Details</summary>
+        {{ partial "recipe-meta.html" . }}
+        <aside class="recipe-actions no-print">
+            <a href="/recipes/units/"><svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1Z"/><path d="M7 6v4"/><path d="M11 6v2"/><path d="M15 6v4"/><path d="M19 6v2"/></svg>Unit Conversions</a>
+            <span class="action-sep">·</span>
+            <a href="javascript:window.print()"><svg class="action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>Print</a>
+        </aside>
+    </details>
     {{ end }}
-
-    {{ partial "recipe-meta.html" . }}
 </header>
 
 <article class="section-recipes">

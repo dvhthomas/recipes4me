@@ -29,14 +29,19 @@ The key here is patience: a long, **gradual sear** to build color and flavor, fo
 ### Ingredients
 
 {{< ingredients >}}
+#### Meat & Seafood
 - 1 x 3-bone beef short rib, cut through the bones into 4 portions
-- Vegetable oil, for searing
+
+#### Produce
 - 1 carrot, diced
 - 1 onion, diced
 - 1 stick celery, diced
 - 1 head garlic
 - 1 small bunch fresh thyme
 - 3 sprigs fresh rosemary
+
+#### Pantry
+- Vegetable oil, for searing
 - 3 whole star anise
 - 500ml red wine
 - 750ml brown chicken stock, plus extra for reheating

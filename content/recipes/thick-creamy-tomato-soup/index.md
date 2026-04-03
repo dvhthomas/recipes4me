@@ -14,9 +14,9 @@ cuisines: [American]
 categories: [Soup]
 diets: []
 # Recipe metadata
-prepTime: "PT30M"
-cookTime: "PT1H50M"
-totalTime: "PT1H50M"
+prepTime: "PT15M"
+cookTime: "PT1H45M"
+totalTime: "PT2H"
 yield: 10
 yieldUnit: "servings"
 difficulty: "Easy"
@@ -31,17 +31,22 @@ The [original recipe](https://www.seriouseats.com/thick-creamy-tomato-soup-recip
 ### Ingredients
 
 {{< ingredients >}}
-- 4 ounces unsalted butter (1 stick)
+#### Produce
 - 4 large carrots (about 1 pound), diced
 - 2 medium yellow onions (about 1 pound), diced
+- 1/2 ounce fresh basil leaves (about 1 loosely packed cup), cut into chiffonade
+
+#### Dairy & Eggs
+- 4 ounces unsalted butter (1 stick)
+- 8 ounces heavy cream (1 cup)
+
+#### Pantry
 - 3 28-ounce cans whole tomatoes, crushed roughly by hand
 - 4 cups low-sodium chicken stock
 - 1/4 teaspoon baking soda (optional, see notes)
-- 8 ounces heavy cream (1 cup)
 - 1 1/4 teaspoons Diamond Crystal kosher salt, or to taste
 - 1/2 teaspoon freshly ground black pepper, or to taste
 - 1/8 teaspoon ground cayenne, or to taste
-- 1/2 ounce fresh basil leaves (about 1 loosely packed cup), cut into chiffonade
 {{< /ingredients >}}
 
 ### Instructions

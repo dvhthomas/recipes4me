@@ -1,12 +1,12 @@
 baseURL = "https://recipes4.me/"
 languageCode = "en-us"
-title = "Recipes By Me"
+title = "Recipes For Me"
 
 [pagination]
-  pagerSize = 50
+  pagerSize = 20
 
 [params]
-    description = "Kitchen-tested recipes by Dylan Thomas"
+    description = "Good recipes without the advertisements or the life story"
 
 [menu]
     [[menu.main]]

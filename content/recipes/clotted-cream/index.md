@@ -32,6 +32,7 @@ This is by far the easiest and quickest method.
 ### Ingredients
 
 {{< ingredients >}}
+#### Dairy & Eggs
 - 3 cups (710 ml) heavy cream
 - 2 tbsp unsalted butter
 {{< /ingredients >}}

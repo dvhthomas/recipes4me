@@ -33,16 +33,23 @@ The [source recipe](https://www.waitrose.com/ecom/recipe/roast-spatchcock-chicke
 ### Ingredients
 
 {{< ingredients >}}
+#### Meat & Seafood
+- 1 large chicken (about 1.8kg or 4 lbs)
+
+#### Produce
 - 1/2 x 100g pack cilantro, roughly chopped
 - 25g pack mint, leaves roughly chopped
 - 6 garlic cloves, crushed
 - 30g fresh root ginger, finely chopped (about 30g)
 - 2 red chillies, finely chopped
 - 5 limes, zest and juice of 3, 2 halved
+
+#### Dairy & Eggs
+- 160ml can coconut cream (2/3 cup)
+
+#### Pantry
 - 1 tbsp soy sauce
 - 2 tbsp sunflower oil
-- 1 large chicken (about 1.8kg or 4 lbs)
-- 160ml can coconut cream (2/3 cup)
 - 150ml fresh chicken stock (2/3 cup)
 {{< /ingredients >}}
 

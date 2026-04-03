@@ -1,3 +1,3 @@
 ---
-title: "Recipes By Me"
+title: "Recipes For Me"
 ---

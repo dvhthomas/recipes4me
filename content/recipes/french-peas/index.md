@@ -30,13 +30,22 @@ difficulty: "Easy"   # Easy, Intermediate, Advanced
 ### Ingredients
 
 {{< ingredients >}}
-- 500g frozen peas, defrosted
+#### Meat & Seafood
+- 50g diced ventreche bacon, rind removed
+
+#### Produce
 - 2 italian white onions, diced – pea size
 - 2 heads gem lettuce, washed and finely cut
-- 50g diced ventreche bacon, rind removed
-- 1 liter white chicken stock
-- 100g frozen silverskin onions, defrosted
 - 1/2 bunch finely chopped parsley
+
+#### Pantry
+- 1 liter white chicken stock
+
+#### Frozen
+- 500g frozen peas, defrosted
+- 100g frozen silverskin onions, defrosted
+
+#### Other
 - Beurre manie (equal soft butter and kneaded flour) – versions can be made with ham/duck/chicken fat.
 {{< /ingredients >}}
 

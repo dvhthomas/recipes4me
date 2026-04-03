@@ -31,4 +31,4 @@
 {{- end -}}
 
 {{- .Page.Scratch.Set "instructions" $instructions -}}
-{{- .Inner | markdownify -}}
+{{- .Inner | markdownify | partial "fractions.html" | safeHTML -}}

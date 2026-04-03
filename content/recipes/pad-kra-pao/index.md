@@ -33,18 +33,23 @@ I also usually just 2.5 tablespoons of whatever soy sauce I have because I typic
 ### Ingredients
 
 {{< ingredients >}}
-- 3 tablespoons vegetable oil
+#### Meat & Seafood
+- 1 pound ground pork
+
+#### Produce
 - 2 shallots (thinly sliced)
 - 7 cloves garlic (sliced)
 - 3 Thai bird or holland chilies (de-seeded, if desired, and thinly sliced)
-- 1 pound ground pork
+- holy basil leaves (about 1 1/2 cups packed)
+
+#### Pantry
+- 3 tablespoons vegetable oil
 - 1 teaspoon sugar
 - 1 tablespoon fish sauce
 - 1 tablespoon thin/light soy sauce
 - 2 teaspoons dark soy sauce
 - 2 teaspoons oyster sauce
 - 1/3 cup chicken broth
-- holy basil leaves (about 1 1/2 cups packed)
 {{< /ingredients >}}
 
 {{< instructions >}}

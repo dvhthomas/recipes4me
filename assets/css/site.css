@@ -10,17 +10,31 @@
 }
 
 :root {
-    --black: #1a1a1a;
-    --white: #FFFFFF;
-    --accent: #2B5B84;
-    --accent-secondary: #6B7C5E;
-    --accent-tertiary: #8C7355;
-    --muted: #6B6B6B;
-    --border: #D4D0CA;
-    --bg-subtle: #F7F6F3;
-    --cuisine-accent: #2B5B84;
-    --category-accent: #6B7C5E;
-    --diet-accent: #8C7355;
+    /* ============================================
+       THEME: Change --hue to re-theme the entire site.
+       All other colors are derived from this value.
+       Current: 12 (terracotta). Try: 200 (blue), 160 (teal), 280 (purple), 30 (orange)
+       ============================================ */
+    --hue: 12;
+
+    /* Derived hue/saturation/lightness */
+    --accent-s: 54%;
+    --accent-l: 49%;
+
+    /* Semantic colors — all derived from --hue */
+    --black: hsl(var(--hue), 5%, 10%);
+    --white: hsl(0, 0%, 100%);
+    --accent: hsl(var(--hue), var(--accent-s), var(--accent-l));
+    --accent-dark: hsl(var(--hue), var(--accent-s), calc(var(--accent-l) - 16%));
+    --accent-secondary: hsl(calc(var(--hue) + 128), 26%, 39%);
+    --accent-tertiary: hsl(calc(var(--hue) + 30), 65%, 47%);
+    --muted: hsl(var(--hue), 3%, 42%);
+    --border: hsl(var(--hue), 10%, 81%);
+    --bg-subtle: hsl(var(--hue), 20%, 97%);
+    --cuisine-accent: var(--accent);
+    --category-accent: var(--accent-secondary);
+    --diet-accent: var(--accent-tertiary);
+    --card-bg: hsl(var(--hue), 30%, 98%);
 }
 
 html {
@@ -41,6 +55,12 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.01em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1:first-child, h2:first-child, h3:first-child, h4:first-child {
+    margin-top: 0;
 }
 
 h1 {
@@ -82,6 +102,11 @@ main {
     padding: 2.5rem 1.5rem;
 }
 
+main ul, main ol {
+    padding-left: 1.2em;
+    margin-bottom: 1.5rem;
+}
+
 hr {
     border: none;
     border-top: 1px solid var(--border);
@@ -121,7 +146,7 @@ code {
 
 pre {
     background: var(--black);
-    color: #F5F2EC;
+    color: hsl(36, 20%, 95%);
     padding: 1.25rem;
     overflow-x: auto;
     margin: 1.5rem 0;
@@ -197,6 +222,7 @@ nav {
     text-decoration: none;
 }
 
+
 /* --- Footer --- */
 footer {
     border-top: 1px solid var(--border);
@@ -219,9 +245,58 @@ footer p {
 
 /* --- Page Header --- */
 .page-header {
-    border-bottom: 1px solid var(--border);
+    border-bottom: 3px solid var(--accent);
     padding-bottom: 1.5rem;
     margin-bottom: 2rem;
+}
+
+/* --- Hero --- */
+.hero {
+    position: relative;
+    margin: -2.5rem -1.5rem 2rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: hsla(0, 0%, 0%, 0.35);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 2.5rem;
+}
+
+.hero-content h1 {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-style: italic;
+}
+
+.hero .search-box {
+    margin-top: 1.5rem;
+}
+
+.hero .search-box input {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.hero .search-box button {
+    background: var(--accent-dark);
+    color: var(--white);
 }
 
 .page-header h1 {
@@ -248,11 +323,13 @@ footer p {
 
 /* --- Search --- */
 .search-box {
-    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
 }
 
 .search-box input {
-    width: 100%;
+    flex: 1;
     padding: 0.75rem 1rem;
     font-size: 1rem;
     font-family: inherit;
@@ -270,6 +347,25 @@ footer p {
 
 .search-box input::placeholder {
     color: var(--muted);
+}
+
+.search-box button {
+    padding: 0.75rem 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.search-box button:hover {
+    opacity: 0.85;
 }
 
 .search-empty {
@@ -317,7 +413,7 @@ footer p {
     padding: 1.25rem;
     text-decoration: none;
     color: var(--black);
-    background: #FDFBF7;
+    background: var(--card-bg);
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -376,7 +472,7 @@ footer p {
     border: 1px solid;
     border-radius: 3px;
     display: inline-block;
-    background: #FFFFFF;
+    background: var(--white);
 }
 
 .tag-cuisine {
@@ -435,9 +531,8 @@ footer p {
 
 /* --- Recipe Header --- */
 .recipe-header {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 1.5rem;
-    margin-bottom: 2rem;
+    padding-bottom: 0;
+    margin-bottom: 1.5rem;
 }
 
 .recipe-header h1 {
@@ -466,16 +561,10 @@ footer p {
 
 /* --- Recipe Actions Bar --- */
 .recipe-actions {
-    margin: 1.25rem 0 0;
-    padding: 0.5rem 0.75rem;
+    margin: 1rem 0 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-size: 0.75rem;
     letter-spacing: 0.04em;
-    background: var(--bg-subtle);
-    border: 1px solid var(--border);
-    border-radius: 4px;
 }
 
 .recipe-actions a {
@@ -492,6 +581,47 @@ footer p {
     color: var(--muted);
 }
 
+/* --- Collapsible Recipe Details --- */
+.recipe-details {
+    margin-top: 1rem;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+}
+
+.recipe-details-toggle {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    cursor: pointer;
+    list-style: none;
+}
+
+.recipe-details-toggle::-webkit-details-marker {
+    display: none;
+}
+
+.recipe-details-toggle::after {
+    content: " ▾ Hide details";
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.recipe-details:not([open]) > .recipe-details-toggle::after {
+    content: " ▸ Show details";
+}
+
+/* --- Action icons --- */
+.action-icon {
+    width: 0.9em;
+    height: 0.9em;
+    vertical-align: -0.1em;
+    margin-right: 0.2em;
+}
+
 /* --- Recipe Meta Grid --- */
 .recipe-meta {
     margin: 1.5rem 0 0;
@@ -505,7 +635,8 @@ footer p {
 
 .meta-item {
     padding: 0.6rem 1.25rem;
-    background: var(--bg-subtle);
+    background: var(--white);
+    border: 1px solid var(--border);
     border-radius: 6px;
     text-align: center;
     flex: 1 1 auto;
@@ -580,8 +711,6 @@ footer p {
 }
 
 .recipe-content {
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
     padding: 2rem 0;
     margin: 2rem 0;
 }
@@ -590,8 +719,6 @@ footer p {
     font-family: 'Playfair Display', 'Georgia', serif;
     font-size: 1.3rem;
     color: var(--accent);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 0.5rem;
     margin-bottom: 1rem;
     margin-top: 2rem;
 }
@@ -608,7 +735,7 @@ footer p {
     text-transform: uppercase;
     font-size: 0.85rem;
     letter-spacing: 0.06em;
-    color: var(--muted);
+    color: var(--accent-secondary);
 }
 
 /* --- Ingredients --- */
@@ -618,12 +745,13 @@ footer p {
 }
 
 .recipe-content .ingredients-list ul li {
-    padding: 0.6rem 0;
-    border-bottom: 1px solid #e8e4de;
+    padding: 0.4rem 0;
 }
 
-.recipe-content .ingredients-list ul li:last-child {
-    border-bottom: none;
+.recipe-content .ingredients-list ul li::before {
+    content: "☐";
+    margin-right: 0.5em;
+    color: var(--muted);
 }
 
 /* --- Instructions --- */
@@ -663,8 +791,12 @@ footer p {
 }
 
 @media print {
+    /* --- Hide non-essential elements --- */
     .no-print,
     .recipe-actions,
+    .recipe-taxonomies,
+    .recipe-details,
+    .search-box,
     nav,
     footer,
     .recipe-author-date {
@@ -675,8 +807,10 @@ footer p {
         display: block !important;
     }
 
+    /* --- Base print styles --- */
     body {
         font-size: 11pt;
+        line-height: 1.5;
         color: #000;
         background: #fff;
     }
@@ -684,33 +818,106 @@ footer p {
     main {
         max-width: none;
         padding: 0;
+        margin: 0;
     }
 
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    /* --- Typography --- */
+    h1 { font-size: 18pt; margin-bottom: 0.25rem; }
+    h2, h3 { font-size: 13pt; }
+    h4 { font-size: 10pt; }
+
+    /* --- Recipe header --- */
     .recipe-header {
-        border-bottom: 1px solid #000;
-        margin-bottom: 1rem;
+        border-bottom: 2pt solid #000;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
     }
 
+    .recipe-summary {
+        font-size: 10pt;
+        margin-bottom: 0.5rem;
+    }
+
+    /* --- Meta grid: compact single line --- */
     .recipe-meta-grid {
-        border: 1px solid #000;
-        padding: 0.5rem;
-        margin-bottom: 1rem;
+        display: flex;
+        gap: 1rem;
+        border: 1pt solid #000;
+        border-radius: 0;
+        padding: 0.3rem 0.5rem;
+        margin-bottom: 0.75rem;
+        background: none;
     }
 
     .meta-item {
         border-left-color: #000;
+        padding: 0.1rem 0.5rem;
     }
 
+    .meta-label {
+        font-size: 7pt;
+    }
+
+    .meta-value {
+        font-size: 10pt;
+    }
+
+    /* --- Recipe content --- */
     .recipe-content {
         border: none;
         padding: 0;
-        margin: 1rem 0;
+        margin: 0;
     }
 
+    .section-recipes {
+        font-size: 10pt;
+        line-height: 1.5;
+    }
+
+    /* --- Section headings --- */
     .recipe-content h3 {
         color: #000;
-        border-bottom-color: #000;
+        font-size: 12pt;
+        border-bottom: 1pt solid #000;
+        padding-bottom: 0.15rem;
+        margin-top: 0.75rem;
+        margin-bottom: 0.4rem;
         page-break-after: avoid;
+    }
+
+    .recipe-content h3:first-child {
+        margin-top: 0;
+    }
+
+    /* --- Ingredient group headings --- */
+    .recipe-content h4 {
+        color: #000;
+        font-size: 9pt;
+        margin-top: 0.5rem;
+        margin-bottom: 0.15rem;
+        page-break-after: avoid;
+    }
+
+    /* --- Ingredients: compact list --- */
+    .ingredients-list ul {
+        margin-bottom: 0.25rem;
+    }
+
+    .ingredients-list ul li {
+        padding: 0.1rem 0;
+        border-bottom: none;
+        font-size: 10pt;
+    }
+
+    /* --- Instructions: keep steps together --- */
+    .recipe-content p {
+        page-break-inside: avoid;
+        margin-bottom: 0.4rem;
     }
 
     .recipe-content ul li,
@@ -718,16 +925,29 @@ footer p {
         page-break-inside: avoid;
     }
 
-    .recipe-content p,
-    .recipe-content figure {
+    /* --- Keep headings with their content --- */
+    h1, h2, h3, h4 {
+        page-break-after: avoid;
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* --- Images: keep but constrain size --- */
+    img {
+        max-width: 100%;
+        max-height: 250pt;
         page-break-inside: avoid;
     }
 
-    h1 { font-size: 20pt; }
-    h2, h3 { font-size: 14pt; }
+    /* --- Notes section --- */
+    .recipe-content p:last-child {
+        margin-bottom: 0;
+    }
 
-    figure {
-        display: none;
+    /* --- Page setup --- */
+    @page {
+        margin: 1.5cm;
+        size: auto;
     }
 }
 

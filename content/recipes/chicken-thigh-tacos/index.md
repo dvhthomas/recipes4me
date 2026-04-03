@@ -30,10 +30,15 @@ This is a very easy recipe to double.
 ### Ingredients
 
 {{< ingredients >}}
+#### Meat & Seafood
 - 1.5 pounds chicken thighs
+
+#### Produce
+- 1 lime, juiced
+
+#### Pantry
 - 1 4-6oz can chipotle peppers in adobo sauce
 - 1 teaspoon cumin
-- 1 lime, juiced
 - 2 tbsp olive oil
 {{< /ingredients >}}
 
