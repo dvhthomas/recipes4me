@@ -31,12 +31,17 @@ See Tips for picking the right beef.
 ### Ingredients
 
 {{< ingredients >}}
+#### Meat & Seafood
 - 2 lb meat, about 4 medium ranchero steaks.
+
+#### Produce
 - 3 cloves garlic
 - 1 cup cilantro leaves
 - 2 scallions
 - 2 limes, zest and juice
 - 1 orange, zest and juice
+
+#### Pantry
 - Cumin 2.5 tsp
 - Oregano (dried)
 1 chipotle chile with 1 tbsp adobo sauce

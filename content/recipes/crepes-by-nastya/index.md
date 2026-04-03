@@ -31,9 +31,12 @@ It's essential that it can easily flow across the griddle.
 ### Ingredients
 
 {{< ingredients >}}
-- 1 cup of flour
+#### Dairy & Eggs
 - 2 cups milk
 - 2 tablespoons melted butter at room temperature
+
+#### Pantry
+- 1 cup of flour
 - 1/4 teaspoon salt
 - 1 tablespoon sugar
 - 1 teaspoon vanilla extract

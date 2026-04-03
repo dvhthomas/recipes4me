@@ -32,13 +32,16 @@ If you have 3 cups of heavy cream, try making some clotted cream to smear on top
 ### Ingredients
 
 {{< ingredients >}}
+#### Dairy & Eggs
+- 6 tbsp unsalted butter at room temperature
+- 2/3 cup whole milk
+- 1 large egg
+
+#### Pantry
 - 2 cups all-purpose flour (10 ounces by weight)
 - 4 tsp baking powder
 - 1/2 tsp salt
 - 1/4 cup sugar
-- 6 tbsp unsalted butter at room temperature
-- 2/3 cup whole milk
-- 1 large egg
 {{< /ingredients >}}
 
 ### Instructions

@@ -1,4 +1,4 @@
-# Recipes By Me
+# Recipes For Me
 
 Kitchen-tested recipes by Dylan Thomas, built with [Hugo](https://gohugo.io/).
 

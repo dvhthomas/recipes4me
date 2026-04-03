@@ -156,6 +156,14 @@ if (searchInput) {
     }, 200);
   });
 
+  const searchBtn = document.getElementById("recipe-search-btn");
+  if (searchBtn) {
+    searchBtn.addEventListener("click", () => {
+      updateUrl(searchInput.value);
+      executeSearch(searchInput.value);
+    });
+  }
+
   // Restore search from URL on load
   const params = new URLSearchParams(window.location.search);
   const initialQuery = params.get("s");

@@ -9,4 +9,4 @@
     {{- end -}}
 {{- end -}}
 {{- .Page.Scratch.Set "ingredients" $ingredients -}}
-<div class="ingredients-list">{{- .Inner | markdownify -}}</div>
+<div class="ingredients-list">{{- .Inner | markdownify | partial "fractions.html" | safeHTML -}}</div>
